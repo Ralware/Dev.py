@@ -1,12 +1,12 @@
-GuessNumber = 67
-
-while True:
-    Guess = int(input("What's The Number : "))
-    if (Guess==GuessNumber):
-        print("You Got It!")
-        break
-    else:
-        print("Try Again!")
+def NumberGuesser():
+    GuessNumber = 67
+    while True:
+        Guess = int(input("What's The Number : "))
+        if (Guess==GuessNumber):
+            print("You Got It!")
+            break
+        else:
+            print("Try Again!")
 
 def IsEven(Num):
     return True if Num % 2 == 0 else False
@@ -28,3 +28,5 @@ def SearchNames():
             return ("New York")
         case _:
             return ("Unknown")
+        
+
