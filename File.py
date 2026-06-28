@@ -14,5 +14,23 @@ def ReadData():
     for Name in sorted(NamesArr):
         print(Name)
 
+def ReadStudentData():
+    with open("Student.csv") as file:
+        for line in file:
+            row = line.rstrip().split(',')
+            print(f"{row[0]} → {row[1]}")
 
+def SortedStudentByName():
+    DataSet = []
 
+    with open("Student.csv") as file:
+        for line in file:
+            name,detail = line.rstrip().split(',')
+            Data = {"name":name,"detail":detail}
+            DataSet.append(Data)
+    print(DataSet)
+    
+    for Data in sorted(DataSet,key=lambda Data:Data['name']):
+        print(f"{Data['name']} → {Data['detail']}")
+
+SortedStudentByName()
