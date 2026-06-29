@@ -1,3 +1,4 @@
+import csv
 # File Inputs 
 def InputData():
     Count = int(input("How Many Names ? :"))
@@ -24,8 +25,9 @@ def SortedStudentByName():
     DataSet = []
 
     with open("Student.csv") as file:
-        for line in file:
-            name,detail = line.rstrip().split(',')
+        reader = csv.reader(file)
+        print(reader)
+        for name,detail in reader:
             Data = {"name":name,"detail":detail}
             DataSet.append(Data)
     print(DataSet)
@@ -33,4 +35,3 @@ def SortedStudentByName():
     for Data in sorted(DataSet,key=lambda Data:Data['name']):
         print(f"{Data['name']} → {Data['detail']}")
 
-SortedStudentByName()
